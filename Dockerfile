@@ -42,7 +42,7 @@ COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
 # Generate Prisma client in production image
 RUN npx prisma generate
 
-EXPOSE 3000
+EXPOSE 3001
 
 # Use a startup script to run migrations and start the app
 CMD ["sh", "-c", "npx prisma migrate deploy && npm run start:prod"]
